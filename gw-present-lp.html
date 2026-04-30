@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GWプレゼント｜さっちゃん公式</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FDF8F2;
+    --warm-white: #FFFCF8;
+    --blush: #F4C5B0;
+    --rose: #E8956D;
+    --deep-rose: #C96A45;
+    --sage: #8BAF8E;
+    --deep-sage: #5A7D5E;
+    --charcoal: #2D2D2D;
+    --mid-gray: #6B6B6B;
+    --light-gray: #E8E3DC;
+    --gold: #C9A96E;
+    --light-gold: #F0E4CC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ========== HERO ========== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #FDF0E8 0%, #FDF8F2 40%, #EFF5EF 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(244,197,176,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float1 8s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(139,175,142,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float2 10s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, 30px); }
+  }
+
+  @keyframes float2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -20px); }
+  }
+
+  .hero-badge {
+    background: var(--rose);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 6px 20px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    animation: fadeDown 0.8s ease both;
+    position: relative; z-index: 1;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 700;
+    line-height: 1.55;
+    text-align: center;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    animation: fadeDown 0.8s ease 0.1s both;
+    position: relative; z-index: 1;
+  }
+
+  .hero-title .accent {
+    color: var(--rose);
+    position: relative;
+  }
+
+  .hero-title .accent::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blush), var(--rose));
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-size: clamp(14px, 3vw, 17px);
+    color: var(--mid-gray);
+    text-align: center;
+    line-height: 1.9;
+    margin-bottom: 36px;
+    animation: fadeDown 0.8s ease 0.2s both;
+    position: relative; z-index: 1;
+  }
+
+  .hero-image-area {
+    width: 160px; height: 160px;
+    background: linear-gradient(135deg, var(--blush), var(--light-gold));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 72px;
+    margin-bottom: 36px;
+    box-shadow: 0 20px 60px rgba(232,149,109,0.25);
+    animation: fadeUp 0.8s ease 0.3s both;
+    position: relative; z-index: 1;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 10px 40px rgba(201,106,69,0.35);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeUp 0.8s ease 0.4s both;
+    position: relative; z-index: 1;
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 50px rgba(201,106,69,0.45);
+  }
+
+  .hero-cta .arrow {
+    font-size: 20px;
+    animation: bounce 1.5s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+
+  /* ========== SECTIONS ========== */
+  section { padding: 80px 24px; }
+
+  .section-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* ========== EMPATHY ========== */
+  .empathy {
+    background: var(--warm-white);
+  }
+
+  .empathy-bubbles {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .bubble {
+    background: linear-gradient(135deg, #FFF5F0, #FFF9F5);
+    border-left: 4px solid var(--blush);
+    border-radius: 0 16px 16px 0;
+    padding: 16px 20px;
+    font-size: 15px;
+    color: var(--charcoal);
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+
+  .bubble.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .empathy-text {
+    font-size: clamp(15px, 3vw, 17px);
+    line-height: 2;
+    color: var(--mid-gray);
+    text-align: center;
+  }
+
+  .empathy-text strong {
+    color: var(--charcoal);
+    font-weight: 700;
+  }
+
+  /* ========== PROFILE ========== */
+  .profile {
+    background: linear-gradient(160deg, #EFF5EF 0%, var(--cream) 100%);
+  }
+
+  .profile-card {
+    background: white;
+    border-radius: 28px;
+    padding: 40px 36px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .profile-avatar {
+    width: 120px; height: 120px;
+    background: linear-gradient(135deg, var(--sage), var(--blush));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 52px;
+    box-shadow: 0 8px 30px rgba(139,175,142,0.3);
+  }
+
+  .profile-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .profile-name span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--mid-gray);
+    margin-top: 4px;
+    letter-spacing: 0.08em;
+  }
+
+  .profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .tag {
+    background: var(--light-gold);
+    color: var(--deep-rose);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 100px;
+  }
+
+  .profile-desc {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--mid-gray);
+    text-align: left;
+  }
+
+  /* ========== PRESENTS ========== */
+  .presents {
+    background: var(--cream);
+  }
+
+  .section-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--rose);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    color: var(--charcoal);
+  }
+
+  .section-lead {
+    text-align: center;
+    font-size: 15px;
+    color: var(--mid-gray);
+    line-height: 1.9;
+    margin-bottom: 56px;
+  }
+
+  .present-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .present-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s, transform 0.6s, box-shadow 0.3s;
+  }
+
+  .present-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .present-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+
+  .present-header {
+    padding: 24px 28px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .present-num {
+    min-width: 52px; height: 52px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .present-num .num-big {
+    font-size: 20px;
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  .num-1 { background: linear-gradient(135deg, #FFE4D6, #FFCDB8); color: var(--deep-rose); }
+  .num-2 { background: linear-gradient(135deg, #D6EED8, #B8E0BC); color: var(--deep-sage); }
+  .num-3 { background: linear-gradient(135deg, #F0E4CC, #E8D4AA); color: #8B6914; }
+  .num-4 { background: linear-gradient(135deg, #E4D6F0, #D4BAE8); color: #6B3D8B; }
+
+  .present-title-wrap {
+    flex: 1;
+  }
+
+  .present-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--rose);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .present-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(16px, 3.5vw, 20px);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--charcoal);
+  }
+
+  .present-body {
+    padding: 20px 28px 28px;
+  }
+
+  .present-desc {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--mid-gray);
+    margin-bottom: 20px;
+  }
+
+  .present-desc strong {
+    color: var(--charcoal);
+    font-weight: 700;
+  }
+
+  .present-highlight {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--mid-gray);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .present-highlight .hl-title {
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ========== PRICE BOX ========== */
+  .price-box {
+    background: linear-gradient(135deg, #FDF0E8, #FFF5F0);
+    border: 2px solid var(--blush);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .price-original {
+    font-size: 13px;
+    color: var(--mid-gray);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .price-special-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--rose);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .price-amount {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--deep-rose);
+  }
+
+  .price-amount span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .price-note {
+    font-size: 12px;
+    color: var(--mid-gray);
+    margin-top: 8px;
+  }
+
+  /* ========== BUTTONS ========== */
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+  }
+
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn-rose {
+    background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+    color: white;
+    box-shadow: 0 8px 30px rgba(201,106,69,0.3);
+  }
+
+  .btn-rose:hover { box-shadow: 0 12px 40px rgba(201,106,69,0.4); }
+
+  .btn-sage {
+    background: linear-gradient(135deg, var(--sage), var(--deep-sage));
+    color: white;
+    box-shadow: 0 8px 30px rgba(90,125,94,0.3);
+  }
+
+  .btn-sage:hover { box-shadow: 0 12px 40px rgba(90,125,94,0.4); }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #C9A96E, #A8854A);
+    color: white;
+    box-shadow: 0 8px 30px rgba(168,133,74,0.3);
+  }
+
+  .btn-purple {
+    background: linear-gradient(135deg, #9B72CF, #7B52AF);
+    color: white;
+    box-shadow: 0 8px 30px rgba(123,82,175,0.3);
+  }
+
+  /* ========== CLOSING ========== */
+  .closing {
+    background: linear-gradient(160deg, #FDF0E8 0%, #EFF5EF 100%);
+    text-align: center;
+  }
+
+  .closing-quote {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(18px, 4vw, 26px);
+    font-weight: 700;
+    line-height: 1.8;
+    color: var(--charcoal);
+    margin-bottom: 24px;
+  }
+
+  .closing-quote .rose { color: var(--rose); }
+
+  .closing-text {
+    font-size: 15px;
+    line-height: 2;
+    color: var(--mid-gray);
+    margin-bottom: 48px;
+  }
+
+  .closing-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+  }
+
+  /* ========== DIVIDER ========== */
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blush), var(--rose));
+    border-radius: 2px;
+    margin: 0 auto 48px;
+  }
+
+  /* ========== ANIMATIONS ========== */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========== FLOATING CTA ========== */
+  .floating-cta {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    width: calc(100% - 48px);
+    max-width: 400px;
+  }
+
+  .floating-cta.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .floating-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 28px;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(201,106,69,0.45);
+    transition: transform 0.3s;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .floating-btn:hover { transform: translateY(-2px); }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 600px) {
+    .profile-card {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+    }
+    .profile-tags { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-badge">🎁 GW 特別プレゼント企画</div>
+
+  <h1 class="hero-title">
+    GWが終わる前に、<br>
+    ひとつだけ<br>
+    <span class="accent">自分と子どものこと</span>を<br>
+    知っておいてほしい。
+  </h1>
+
+  <p class="hero-sub">
+    イライラするのは、あなたのせいじゃない。<br>
+    関わり方に<strong>「理由」</strong>があるだけ。
+  </p>
+
+  <div class="hero-image-area">🌸</div>
+
+  <a href="#presents" class="hero-cta">
+    プレゼントを受け取る
+    <span class="arrow">↓</span>
+  </a>
+</section>
+
+<!-- ========== EMPATHY ========== -->
+<section class="empathy">
+  <div class="section-inner">
+    <p class="section-label">あなただけじゃない</p>
+    <h2 class="section-title">こんな気持ち、<br>ありませんか？</h2>
+    <div class="divider"></div>
+
+    <div class="empathy-bubbles">
+      <div class="bubble">「また怒ってしまった…」と、夜に自己嫌悪になる</div>
+      <div class="bubble">「この育て方で合ってるのかな」と不安になる</div>
+      <div class="bubble">GWで一緒にいる時間が増えるのに、なぜか疲れてしまう</div>
+      <div class="bubble">「5月になってから、子どもがなんか不安定…」と感じる</div>
+      <div class="bubble">頑張ってるのに、うまくいかない気がする</div>
+    </div>
+
+    <p class="empathy-text">
+      GWって、家族と一緒にいる時間が増えるのに<br>
+      <strong>なぜかもっと疲れてしまうこと</strong>、ありませんか？<br><br>
+      それは、あなたの努力が足りないのではなく<br>
+      <strong>「知らなかっただけ」</strong>かもしれません。
+    </p>
+  </div>
+</section>
+
+<!-- ========== PROFILE ========== -->
+<section class="profile">
+  <div class="section-inner">
+    <p class="section-label">はじめまして</p>
+    <h2 class="section-title">さっちゃんです</h2>
+    <div class="divider"></div>
+
+    <div class="profile-card">
+      <div class="profile-avatar">🌿</div>
+      <div>
+        <p class="profile-name">
+          さっちゃん
+          <span>公認心理師 / エニアグラム専門家</span>
+        </p>
+        <div class="profile-tags">
+          <span class="tag">公認心理師</span>
+          <span class="tag">エニアグラム</span>
+          <span class="tag">行動心理学</span>
+          <span class="tag">特別支援10年以上</span>
+          <span class="tag">個別350人以上</span>
+        </div>
+        <p class="profile-desc" style="margin-top:16px;">
+          特別支援学校教員・障害児療育の10年以上の経験をもとに、
+          エニアグラムと行動心理学を組み合わせた独自メソッドで
+          350人以上の個別セッションを行ってきました。<br><br>
+          「子育てで悩むママが、GWのうちに少しでも楽になってほしい」
+          そんな思いで、今回4つのプレゼントを用意しました。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRESENTS ========== -->
+<section class="presents" id="presents">
+  <div class="section-inner">
+    <p class="section-label">4つの特別プレゼント</p>
+    <h2 class="section-title">GWのうちに<br>受け取ってください🎁</h2>
+    <p class="section-lead">
+      全部無料（④だけ特別価格3,300円）です。<br>
+      受け取らないと、もったいない！
+    </p>
+
+    <div class="present-cards">
+
+      <!-- PRESENT 01 -->
+      <div class="present-card">
+        <div class="present-header">
+          <div class="present-num num-1">
+            <span>No.</span>
+            <span class="num-big">01</span>
+          </div>
+          <div class="present-title-wrap">
+            <p class="present-badge">🎬 アーカイブ配信</p>
+            <h3 class="present-title">インスタライブ<br>見逃し配信</h3>
+          </div>
+        </div>
+        <div class="present-body">
+          <p class="present-desc">
+            「子どものイライラ・親のイライラ、なぜ起きるのか？」をライブでお話しました。
+            アーカイブなので、<strong>好きな時間に見られます。</strong>
+            家事しながらでもOK。
+          </p>
+          <div class="present-highlight">
+            <p class="hl-title">📌 こんな方におすすめ</p>
+            子どもとのやりとりで消耗している、なぜかうまくいかないと感じているママに。
+          </div>
+          <a href="https://www.instagram.com/reel/DXrWm1rif3x/?igsh=MWFwM28wMTN0NXdhMA==" target="_blank" rel="noopener" class="btn btn-rose">
+            🎬 アーカイブを見る（無料）
+          </a>
+        </div>
+      </div>
+
+      <!-- PRESENT 02 -->
+      <div class="present-card">
+        <div class="present-header">
+          <div class="present-num num-2">
+            <span>No.</span>
+            <span class="num-big">02</span>
+          </div>
+          <div class="present-title-wrap">
+            <p class="present-badge">📅 無料セミナー</p>
+            <h3 class="present-title">子どものタイプ別<br>関わり方セミナーへご招待</h3>
+          </div>
+        </div>
+        <div class="present-body">
+          <p class="present-desc">
+            5月中開催予定。公式LINEに
+            <strong>「セミナー」</strong>と送るだけで、
+            日程・詳細をお届けします。
+          </p>
+          <div class="present-highlight">
+            <p class="hl-title">📌 受け取り方</p>
+            公式LINEを友だち追加 → <strong>「セミナー」</strong>と送信するだけ！
+          </div>
+          <a href="https://lin.ee/vSJxDhs" target="_blank" rel="noopener" class="btn btn-sage">
+            💬 LINEでセミナー詳細を受け取る
+          </a>
+        </div>
+      </div>
+
+      <!-- PRESENT 03 -->
+      <div class="present-card">
+        <div class="present-header">
+          <div class="present-num num-3">
+            <span>No.</span>
+            <span class="num-big">03</span>
+          </div>
+          <div class="present-title-wrap">
+            <p class="present-badge">🌟 エニアグラム</p>
+            <h3 class="present-title">あなたのタイプ別<br>自分トリセツ画像プレゼント</h3>
+          </div>
+        </div>
+        <div class="present-body">
+          <p class="present-desc">
+            「自分ってなんでこうなんだろう…」その答えが、ここにあるかもしれません。
+            <strong>自分のタイプと性別を公式LINEに送る</strong>と、
+            あなた専用の"自分トリセツ画像"をプレゼント！
+          </p>
+          <div class="present-highlight">
+            <p class="hl-title">📌 受け取り方</p>
+            公式LINEに <strong>「タイプ7w6・女性」</strong> のように送ってね。<br>
+            タイプが分からない方は <strong>「診断」</strong> と送ると診断リンクをお届けします。
+          </div>
+          <a href="https://lin.ee/vSJxDhs" target="_blank" rel="noopener" class="btn btn-gold">
+            ✨ LINEでトリセツ画像を受け取る
+          </a>
+        </div>
+      </div>
+
+      <!-- PRESENT 04 -->
+      <div class="present-card">
+        <div class="present-header">
+          <div class="present-num num-4">
+            <span>No.</span>
+            <span class="num-big">04</span>
+          </div>
+          <div class="present-title-wrap">
+            <p class="present-badge">📄 GW限定・特別価格</p>
+            <h3 class="present-title">子どものトリセツ<br>PDF鑑定</h3>
+          </div>
+        </div>
+        <div class="present-body">
+          <p class="present-desc">
+            「この子、なんでこうなの？」が<strong>「そういうことか！」</strong>に変わります。
+            生年月日・生まれた時間・生まれた都道府県を教えてもらえれば、
+            <strong>10ページのPDFにしてメールでお届け</strong>します。
+          </p>
+          <div class="price-box">
+            <p class="price-original">通常：zoom鑑定 7,700円</p>
+            <p class="price-special-label">🎁 GW限定 特別価格</p>
+            <p class="price-amount">3,300<span>円（税込）</span></p>
+            <p class="price-note">PDF鑑定 / メールで受け取れる</p>
+          </div>
+          <div class="present-highlight">
+            <p class="hl-title">📌 必要な情報</p>
+            お子さんの生年月日・生まれた時間・生まれた都道府県
+          </div>
+          <a href="https://forms.gle/sgN98nETMRRkd6jGA" target="_blank" rel="noopener" class="btn btn-purple" id="buyBtn">
+            📄 3,300円で申し込む
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== CLOSING ========== -->
+<section class="closing">
+  <div class="section-inner">
+    <p class="closing-quote">
+      あなたの育て方は、<br>
+      <span class="rose">間違っていません。</span><br><br>
+      ただ、知らなかっただけ。
+    </p>
+    <p class="closing-text">
+      GWが終わる前に、ひとつだけ<br>
+      自分と子どものことを知っておいてほしい。<br><br>
+      全部無料（④だけ3,300円）です。<br>
+      受け取らないと、損です。
+    </p>
+    <div class="closing-cta-wrap">
+      <a href="https://lin.ee/vSJxDhs" target="_blank" rel="noopener" class="btn btn-sage">
+        💬 公式LINEを友だち追加する
+      </a>
+      <a href="https://www.instagram.com/reel/DXrWm1rif3x/?igsh=MWFwM28wMTN0NXdhMA==" target="_blank" rel="noopener" class="btn btn-rose">
+        🎬 アーカイブを見る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <p>© 2025 さっちゃん｜公認心理師</p>
+  <p style="margin-top:8px;">
+    <a href="https://lin.ee/vSJxDhs" target="_blank" rel="noopener">公式LINE</a>
+    　|　
+    <a href="https://www.instagram.com/satchan_cocoro/" target="_blank" rel="noopener">Instagram @satchan_cocoro</a>
+  </p>
+</footer>
+
+<!-- ========== FLOATING CTA ========== -->
+<div class="floating-cta" id="floatingCta">
+  <a href="https://lin.ee/vSJxDhs" target="_blank" rel="noopener" class="floating-btn">
+    💬 公式LINEでプレゼントを受け取る
+  </a>
+</div>
+
+<script>
+  // ===== スクロール時のアニメーション =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.bubble, .present-card').forEach(el => {
+    observer.observe(el);
+  });
+
+  // バブルに遅延を追加
+  document.querySelectorAll('.bubble').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.1}s`;
+  });
+
+  // プレゼントカードに遅延を追加
+  document.querySelectorAll('.present-card').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.08}s`;
+  });
+
+  // ===== フローティングCTA =====
+  const floatingCta = document.getElementById('floatingCta');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+      floatingCta.classList.add('show');
+    } else {
+      floatingCta.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>
